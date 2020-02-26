@@ -1,10 +1,30 @@
 package spring.beans;
 
+import spring.services.Order;
+
 public class Snack {
     private int snack_id;
     private String snack_name;
     private int type_id;
     private int tier;
+
+    private Order buyLink;
+
+    public Snack() {
+    }
+
+    public String getReceipt()
+    {
+        return buyLink.orderItem();
+    }
+
+    public Snack(Order buyLink) {
+        this.buyLink = buyLink;
+    }
+
+    public void setBuyLink(Order buyLink) {
+        this.buyLink = buyLink;
+    }
 
     public int getSnack_id() {
         return snack_id;
